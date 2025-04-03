@@ -1,2 +1,3 @@
 # GWAS_Training
-this is the basics training in GWAS using kaggle environment 
+This is the basic training in GWAS using the kaggle environment 
+following the tutorial in https://github.com/Cloufield/GWASTutorial
