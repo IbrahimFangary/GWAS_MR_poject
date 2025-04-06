@@ -1,124 +1,101 @@
-# 🧬 MVMR Analysis: Investigating the Independent Effects of BMI and Type 2 Diabetes on Coronary Artery Disease (CAD)
+# BMI, Type 2 Diabetes, and Coronary Artery Disease: A Mendelian Randomization Study
 
-This repository explores whether **Body Mass Index (BMI)** and **Type 2 Diabetes (T2D)** independently influence the risk of developing **Coronary Artery Disease (CAD)**, using **Multivariable Mendelian Randomization (MVMR)** based on GWAS data from **East Asian populations**.
+## 📁 About This Repository
 
----
+This repository contains a Mendelian Randomization (MR) analysis investigating the potential causal relationships between Body Mass Index (BMI), Type 2 Diabetes (T2D), and Coronary Artery Disease (CAD). The study includes:
 
-## 📂 Repository Contents
+- Univariable MR of BMI on CAD.
+- Univariable MR of T2D on CAD.
+- Multivariable MR (MVMR) of BMI and T2D on CAD.
+- Plots showing MR estimates and SNP-level effects.
+- Interpretation of findings and biological considerations.
 
-- `data/`: Harmonized GWAS summary statistics for BMI, T2D, and CAD  
-- `scripts/`: R scripts for harmonization, instrument selection, and MVMR analysis  
-- `figures/`: Visualizations of MVMR results  
-  - `MVMR_Scatter_BMI_T2D_CAD.png`
-  - `MVMR_Funnel_Plot.png`
-  - `MVMR_Single_SNP_Analysis.png`
-  - `MVMR_Leave_One_Out.png`
-- `results/`: Output tables (effect estimates, p-values, standard errors)
-- `README.md`: This file – report and interpretation
+Data used in this analysis were derived from GWAS summary statistics from East Asian populations.
 
 ---
 
-## 🧪 Objective
+## 📊 MR Results and Interpretation
 
-To assess whether BMI and T2D have **independent causal effects** on CAD when analyzed simultaneously in an MVMR framework.
+### 1. Univariable MR: BMI → CAD
 
----
+**Summary**:  
+This analysis estimates the causal effect of BMI on CAD using genetic variants as instrumental variables. Multiple MR methods (IVW, MR Egger, Weighted Median, Mode-based) were applied.
 
-## 🧬 Methodology
+**Visual**:  
+*Figure 1: MR estimates for BMI on CAD using different methods*  
+![BMI on CAD](figures/bmi_cad.png)
 
-We performed a Multivariable Mendelian Randomization (MVMR) analysis using:
+**Interpretation**:  
+All MR methods showed a small, slightly positive slope, indicating a potential causal relationship between higher BMI and increased CAD risk. However, the slope is close to zero and visually the SNPs are densely clustered around the null, suggesting limited evidence for a strong effect.
 
-- GWAS summary statistics for:
-  - **BMI** (East Asian)
-  - **Type 2 Diabetes (T2D)** (East Asian)
-  - **Coronary Artery Disease (CAD)** (East Asian)
-
-### Steps Taken:
-1. **Instrument Selection**:
-   - SNPs associated with either BMI or T2D at genome-wide significance (p < 5×10⁻⁸)
-   - LD-clumping to ensure independence
-2. **Harmonization** of effect alleles across datasets
-3. **MVMR estimation** using `TwoSampleMR` and `MVMR` R packages
+This result is consistent with previous research suggesting that elevated BMI is associated with increased cardiovascular risk, potentially via mechanisms like dyslipidemia, hypertension, and systemic inflammation [1]. However, genetic-based causal inference in this setting is still prone to bias due to pleiotropy or weak instruments.
 
 ---
 
-## 📊 Results Summary
+### 2. Univariable MR: T2D → CAD
 
-| Exposure | Outcome | SNPs | Effect (β) | SE     | p-value |
-|----------|---------|------|------------|--------|---------|
-| BMI      | CAD     | 3    | 0.434      | 2.011  | 0.829   |
-| T2D      | CAD     | 1    | -0.100     | 1.334  | 0.940   |
+**Summary**:  
+This analysis examines whether genetic predisposition to T2D increases the risk of CAD.
 
-<sub>Table 1: MVMR effect estimates for BMI and T2D on CAD</sub>
+**Visual**:  
+*Figure 2: MR estimates for T2D on CAD using different methods*  
+![T2D on CAD](figures/t2d_cad.png)
 
-These results suggest **no statistically significant evidence** that either BMI or T2D has an independent causal effect on CAD in this analysis.
+**Interpretation**:  
+The results suggest a slight positive association, with MR slopes from different methods being modestly aligned in the positive direction. Still, effect sizes are small and most SNPs show large confidence intervals.
 
----
-
-## 🖼️ Figures
-
-- **Figure 1: MVMR_Scatter_BMI_T2D_CAD.png**  
-  Scatter plot of SNP-exposure vs SNP-outcome effects. No clear causal trend observed.
-
-- **Figure 2: MVMR_Funnel_Plot.png**  
-  Funnel plot shows symmetrical distribution, suggesting no strong evidence of directional pleiotropy.
-
-- **Figure 3: MVMR_Single_SNP_Analysis.png**  
-  Forest plot of individual SNP estimates reveals large confidence intervals.
-
-- **Figure 4: MVMR_Leave_One_Out.png**  
-  Leave-one-out analysis indicates no single SNP is driving the results.
+Epidemiological evidence supports a link between T2D and CAD, likely due to chronic hyperglycemia leading to endothelial dysfunction and atherogenesis [2]. However, these MR results do not strongly support a causal effect, possibly due to weak instrument strength or population-specific factors in the East Asian cohort.
 
 ---
 
-## 📌 Interpretation and Biological Context
+### 3. Multivariable MR: BMI + T2D → CAD
 
-Despite the lack of statistical significance, these findings **should not be interpreted as evidence of no effect**. Instead, they may reflect limitations of the dataset and instrument strength.
+**Summary**:  
+MVMR was conducted to estimate the independent causal effects of BMI and T2D on CAD, adjusting for their mutual confounding.
 
-### Potential Explanations:
+**Results**:
+| Exposure | b (Estimate) | SE | p-value |
+|----------|--------------|----|---------|
+| BMI      | 0.4342       | 2.0111 | 0.8290 |
+| T2D      | -0.1001      | 1.3345 | 0.9402 |
 
-1. **Limited SNPs**: Only 3 instruments for BMI and 1 for T2D → **low power**
-2. **High Standard Errors**: Wide confidence intervals indicate considerable uncertainty
-3. **Overlapping Pathways**: BMI and T2D may influence CAD via shared mechanisms (e.g. inflammation, insulin resistance)
+**Interpretation**:  
+After adjusting for each other, neither BMI nor T2D showed statistically significant independent effects on CAD (p > 0.8 for both). The estimates are imprecise with large standard errors, likely due to limited SNP overlap and low instrument strength in the MVMR setting.
 
-### Biological Plausibility:
-
-- **BMI and Obesity** are well-documented risk factors for CAD via mechanisms like systemic inflammation, dyslipidemia, and hypertension [1][2].
-- **T2D** increases CAD risk through **endothelial dysfunction**, **glycation**, and **oxidative stress** [3][4].
-- The interplay between **adiposity and insulin resistance** complicates the isolation of their individual effects on CAD.
-
-Thus, while this MVMR analysis does not confirm independent causal effects, **observational and mechanistic studies suggest strong biological plausibility**.
+These results raise uncertainty about the independent contribution of each trait. It's possible that shared biological pathways (e.g., insulin resistance, inflammation) confound the simple interpretation of their individual effects on CAD risk.
 
 ---
 
 ## ⚠️ Limitations
 
-- ⚠️ **Small number of instruments**: Reduces statistical power and robustness
-- ⚠️ **Potential weak instrument bias**
-- 🌍 **Population-specific results**: GWAS datasets are limited to East Asian ancestries
-- 🔁 **Sample overlap**: Not accounted for; could bias effect estimates
+- Small number of SNPs in MVMR reduces statistical power.
+- Population specificity (East Asian GWAS) may limit generalizability.
+- Possible horizontal pleiotropy and residual confounding.
+- Figures suggest weak instruments with wide SNP confidence intervals.
 
 ---
 
-## 🧭 Future Directions
+## 🔬 Biological Considerations
 
-- Expand to **larger GWAS datasets** with more SNPs
-- Perform **multivariable MR-Egger** to check for pleiotropy
-- Explore **longitudinal MR** or **multi-ethnic** designs
-- Investigate **mediation** via other risk factors (e.g., lipid profiles, blood pressure)
+- **BMI and CAD**: Obesity contributes to metabolic syndrome, which is a known risk factor for CAD. Adipose tissue may promote atherogenesis through secretion of pro-inflammatory cytokines [3].
+- **T2D and CAD**: T2D accelerates atherosclerosis and increases CAD risk via hyperglycemia-induced vascular damage and pro-inflammatory states [4].
+- **Shared pathways**: Both exposures may act through overlapping mechanisms such as insulin resistance and systemic inflammation, which complicates causal disentanglement in MVMR [5].
+
+---
+
+## 📌 Conclusions
+
+While observational studies suggest both BMI and T2D increase CAD risk, this MR study did not find strong genetic evidence supporting direct, independent causal effects, especially in the multivariable context. These findings should be interpreted with caution due to limited power and potential bias. Further investigation with stronger instruments, larger sample sizes, and more robust models is warranted.
 
 ---
 
 ## 📚 References
 
-1. Lavie CJ, et al. (2009). *Obesity and cardiovascular disease: risk factor, paradox, and impact of weight loss.* J Am Coll Cardiol. https://doi.org/10.1016/j.jacc.2008.11.050  
-2. Powell-Wiley TM, et al. (2021). *Obesity and cardiovascular disease: a scientific statement.* Circulation. https://doi.org/10.1161/CIR.0000000000000973  
-3. Brownlee M. (2005). *The pathobiology of diabetic complications: a unifying mechanism.* Diabetes. https://doi.org/10.2337/diabetes.54.6.1615  
-4. Low Wang CC, et al. (2016). *Diabetes and cardiovascular disease: a statement for healthcare professionals.* Circulation. https://doi.org/10.1161/CIR.0000000000000354
+1. Powell-Wiley, T. M. et al. (2021). Obesity and Cardiovascular Disease: A Scientific Statement from the AHA. *Circulation*.
+2. Rawshani, A. et al. (2017). Risk Factors, Mortality, and Cardiovascular Outcomes in T2D. *NEJM*.
+3. Ouchi, N. et al. (2011). Adipokines and inflammation in atherosclerosis. *Circ. J.*
+4. Rutter, M. K. et al. (2003). Diabetes, lipids, and CAD. *Diabetes Care*.
+5. Lotta, L. A. et al. (2017). Genetic insights into insulin resistance and CAD. *Nature Genetics*.
 
 ---
-
-## 🧠 Conclusion
-
-This project attempted to untangle the effects of BMI and T2D on CAD using MVMR. While results did not support independent causal effects, **this may reflect insufficient power** rather than true absence of effect. Further studies with stronger instruments and larger datasets are essential to clarify these complex relationships.
 
