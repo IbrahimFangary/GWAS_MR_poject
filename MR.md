@@ -29,7 +29,7 @@ This analysis estimates the causal effect of BMI on CAD using genetic variants a
 **Interpretation**:  
 All MR methods showed a small, slightly positive slope, indicating a potential causal relationship between higher BMI and increased CAD risk. However, the slope is close to zero and visually the SNPs are densely clustered around the null, suggesting limited evidence for a strong effect.
 
-This result is consistent with previous research suggesting that elevated BMI is associated with increased cardiovascular risk, potentially via mechanisms like dyslipidemia, hypertension, and systemic inflammation [1]. However, genetic-based causal inference in this setting is still prone to bias due to pleiotropy or weak instruments.
+This result is partially consistent with previous research suggesting that elevated BMI is associated with increased cardiovascular risk, potentially via mechanisms like dyslipidemia, hypertension, and systemic inflammation [1]. However, genetic-based causal inference in this setting is still prone to bias due to pleiotropy or weak instruments.
 
 ---
 
@@ -46,7 +46,7 @@ This analysis examines whether genetic predisposition to T2D increases the risk 
 **Interpretation**:  
 The results suggest a slight positive association, with MR slopes from different methods being modestly aligned in the positive direction. Still, effect sizes are small and most SNPs show large confidence intervals.
 
-Epidemiological evidence supports a link between T2D and CAD, likely due to chronic hyperglycemia leading to endothelial dysfunction and atherogenesis [2]. However, these MR results do not strongly support a causal effect, possibly due to weak instrument strength or population-specific factors in the East Asian cohort.
+Epidemiological evidence supports a link between T2D and CAD, likely due to chronic hyperglycemia leading to endothelial dysfunction and atherogenesis [2]. However, these MR results do not strongly support a causal effect, due to weak instrument strength or population-specific factors in the East Asian cohort.
 
 ---
 
@@ -80,8 +80,8 @@ These results raise uncertainty about the independent contribution of each trait
 ## 🔬 Biological Considerations
 
 - **BMI and CAD**: Obesity contributes to metabolic syndrome, which is a known risk factor for CAD. Adipose tissue may promote atherogenesis through secretion of pro-inflammatory cytokines [3].
-- **T2D and CAD**: T2D accelerates atherosclerosis and increases CAD risk via hyperglycemia-induced vascular damage and pro-inflammatory states [4].
-- **Shared pathways**: Both exposures may act through overlapping mechanisms such as insulin resistance and systemic inflammation, which complicates causal disentanglement in MVMR [5].
+- **T2D and CAD**: T2D accelerates atherosclerosis and increases CAD risk via hyperglycemia-induced vascular damage and pro-inflammatory states.
+- **Shared pathways**: Both exposures may act through overlapping mechanisms such as insulin resistance and systemic inflammation, which complicates causal disentanglement in MVMR [4].
 
 ---
 
@@ -93,11 +93,10 @@ While observational studies suggest both BMI and T2D increase CAD risk, this MR 
 
 ## 📚 References
 
-1. Powell-Wiley, T. M. et al. (2021). Obesity and Cardiovascular Disease: A Scientific Statement from the AHA. *Circulation*.
-2. Rawshani, A. et al. (2017). Risk Factors, Mortality, and Cardiovascular Outcomes in T2D. *NEJM*.
-3. Ouchi, N. et al. (2011). Adipokines and inflammation in atherosclerosis. *Circ. J.*
-4. Rutter, M. K. et al. (2003). Diabetes, lipids, and CAD. *Diabetes Care*.
-5. Lotta, L. A. et al. (2017). Genetic insights into insulin resistance and CAD. *Nature Genetics*.
+1. Powell-Wiley, T. M. et al. (2021). Obesity and cardiovascular Disease: A scientific statement from the American Heart Association. *Circulation*.
+2. Nakagami, H. et al. (2005). Endothelial dysfunction in hyperglycemia as a trigger of atherosclerosis. *Current Diabetes Reviews*.
+3. Coppack, S. W. et al. (2001). Pro-inflammatory cytokines and adipose tissue. *Proceedings of the Nutrition Society*
+4. Lotta, L. A. et al. (2016). Integrative genomic analysis implicates limited peripheral adipose storage capacity in the pathogenesis of human insulin resistance. *Nature Genetics*.
 
 ---
 
