@@ -16,4 +16,12 @@ The aim is to understand the relationship between cardiometabolic traits and CAD
 ---
 
 ## 📁 Repository Structure
-
+- `Mendelian_Randomization/`
+  - `script/` – R scripts for MR and MVMR analysis  
+  - `figures/` – Generated plots  
+  - `README.md` – Detailed report: BMI, T2D, and CAD MR study  
+- `np_for_GWAS/`
+  - `gwas_notebook.Rmd` – R notebook with GWAS steps using PLINK  
+  - `scripts/` – Bash and R scripts used in GWAS pipeline  
+  - `results/` – GWAS outputs and QC plots  
+- `README.md` – You are here 
