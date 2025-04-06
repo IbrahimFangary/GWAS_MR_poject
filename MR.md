@@ -23,7 +23,8 @@ This analysis estimates the causal effect of BMI on CAD using genetic variants a
 
 **Visual**:  
 *Figure 1: MR estimates for BMI on CAD using different methods*  
-![BMI on CAD](figures/bmi_cad.png)
+![BMI on CAD]![BMI on CAD](https://github.com/user-attachments/assets/552a62b2-8144-48cf-94d7-45c5b483424f)
+
 
 **Interpretation**:  
 All MR methods showed a small, slightly positive slope, indicating a potential causal relationship between higher BMI and increased CAD risk. However, the slope is close to zero and visually the SNPs are densely clustered around the null, suggesting limited evidence for a strong effect.
@@ -39,7 +40,8 @@ This analysis examines whether genetic predisposition to T2D increases the risk 
 
 **Visual**:  
 *Figure 2: MR estimates for T2D on CAD using different methods*  
-![T2D on CAD](figures/t2d_cad.png)
+![T2D on CAD]![T2D on CAD](https://github.com/user-attachments/assets/7c79938a-051b-44fe-b9f9-8cd25e5a93c3)
+
 
 **Interpretation**:  
 The results suggest a slight positive association, with MR slopes from different methods being modestly aligned in the positive direction. Still, effect sizes are small and most SNPs show large confidence intervals.
