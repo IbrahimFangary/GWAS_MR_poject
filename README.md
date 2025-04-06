@@ -25,3 +25,42 @@ The aim is to understand the relationship between cardiometabolic traits and CAD
   - `scripts/` – Bash and R scripts used in GWAS pipeline  
   - `results/` – GWAS outputs and QC plots  
 - `README.md` – You are here 
+
+---
+
+## 📖 Detailed Report
+
+A comprehensive analysis titled:
+
+**"BMI, Type 2 Diabetes, and Coronary Artery Disease: A Mendelian Randomization Study"**
+
+is included in: Mendelian_Randomization/README.md
+
+This report includes:
+- Background & rationale
+- Data sources
+- Code walkthrough
+- Results with plots
+- Interpretation of findings
+- Limitations & next steps
+
+---
+
+## 📊 Methods & Tools
+
+### GWAS
+- Software: **PLINK**, **R**, **Bash**
+- Key steps:
+  - Quality control (missingness, HWE, MAF)
+  - Population stratification check
+  - Association testing
+  - Manhattan & QQ plot generation
+
+### Mendelian Randomization
+- Tools: **TwoSampleMR**, **MVMR**, **ggplot2**, **R Base**
+- Sources:
+  - GWAS summary statistics for BMI, T2D, and CAD (East Asian ancestry)
+- Analyses:
+  - Univariable MR
+  - Multivariable MR
+  - visualization of results
