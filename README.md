@@ -21,9 +21,9 @@ The aim is to understand the relationship between cardiometabolic traits and CAD
   - `figures/` – Generated plots  
   - `README.md` – Detailed report: BMI, T2D, and CAD MR study  
 - `np_for_GWAS/`
-  - `gwas_notebook.Rmd` – R notebook with GWAS steps using PLINK  
-  - `scripts/` – Bash and R scripts used in GWAS pipeline  
-  - `results/` – GWAS outputs and QC plots  
+  - `pre-GWAS and QC.ipynb` 
+  - `GWAS and visualization.ipynb` 
+  - `README.md` 
 - `README.md` – You are here 
 
 ---
