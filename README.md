@@ -49,7 +49,7 @@ This report includes:
 ## 📊 Methods & Tools
 
 ### GWAS
-- Software: **PLINK**, **R**, **Bash**
+- Software: **PLINK**, **Python**, **Bash**
 - Key steps:
   - Quality control (missingness, HWE, MAF)
   - Population stratification check
