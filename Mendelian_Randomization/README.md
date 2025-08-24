@@ -1,6 +1,6 @@
 # BMI, Type 2 Diabetes, and Coronary Artery Disease: A Mendelian Randomization Study
 
-## 📁 About This Repository
+## About This Repository
 
 This repository contains a Mendelian Randomization (MR) analysis investigating the potential causal relationships between Body Mass Index (BMI), Type 2 Diabetes (T2D), and Coronary Artery Disease (CAD). The study includes:
 
@@ -14,7 +14,7 @@ Data used in this analysis were derived from GWAS summary statistics from East A
 
 ---
 
-## 📊 MR Results and Interpretation
+## MR Results and Interpretation
 
 ### 1. Univariable MR: BMI → CAD
 
@@ -68,7 +68,7 @@ These results raise uncertainty about the independent contribution of each trait
 
 ---
 
-## ⚠️ Limitations
+## Limitations
 
 - Small number of SNPs in MVMR reduces statistical power.
 - Population specificity (East Asian GWAS) may limit generalizability.
@@ -77,7 +77,7 @@ These results raise uncertainty about the independent contribution of each trait
 
 ---
 
-## 🔬 Biological Considerations
+## Biological Considerations
 
 - **BMI and CAD**: Obesity contributes to metabolic syndrome, which is a known risk factor for CAD. Adipose tissue may promote atherogenesis through secretion of pro-inflammatory cytokines [3].
 - **T2D and CAD**: T2D accelerates atherosclerosis and increases CAD risk via hyperglycemia-induced vascular damage and pro-inflammatory states.
@@ -85,13 +85,13 @@ These results raise uncertainty about the independent contribution of each trait
 
 ---
 
-## 📌 Conclusions
+## Conclusions
 
 While observational studies suggest both BMI and T2D increase CAD risk, this MR study did not find strong genetic evidence supporting direct, independent causal effects, especially in the multivariable context. These findings should be interpreted with caution due to limited power and potential bias. Further investigation with stronger instruments, larger sample sizes, and more robust models is warranted.
 
 ---
 
-## 📚 References
+## References
 
 1. Powell-Wiley, T. M. et al. (2021). Obesity and cardiovascular Disease: A scientific statement from the American Heart Association. *Circulation*.
 2. Nakagami, H. et al. (2005). Endothelial dysfunction in hyperglycemia as a trigger of atherosclerosis. *Current Diabetes Reviews*.
