@@ -15,7 +15,7 @@ The aim is to understand the relationship between cardiometabolic traits and CAD
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 - `Mendelian_Randomization/`
   - `script/` – R scripts for MR and MVMR analysis  
   - `figures/` – Generated plots  
@@ -24,11 +24,10 @@ The aim is to understand the relationship between cardiometabolic traits and CAD
   - `pre-GWAS and QC.ipynb` 
   - `GWAS and visualization.ipynb` 
   - `README.md` 
-- `README.md` – You are here 
-
+- `README.md` 
 ---
 
-## 📖 Detailed Report
+## Detailed Report
 
 A comprehensive analysis titled:
 
@@ -46,7 +45,7 @@ This report includes:
 
 ---
 
-## 📊 Methods & Tools
+## Methods & Tools
 
 ### GWAS
 - Software: **PLINK**, **Python**, **Bash**
